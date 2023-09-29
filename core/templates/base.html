@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django + tailwind + htmx template</title>
+    <script src="{% static 'js/unpkg.com_htmx.org@1.9.6_dist_htmx.min.js' %}" defer></script>
+    <script
+    type="text/javascript"
+    src="{% static 'js/tw-elements.umd.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    {% block extrahead %}
+    {% endblock %}
+</head>
+<body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
+    {% block body %}{% endblock %}
+</body>
+</html>
